@@ -6,8 +6,8 @@ import gsap from 'gsap';
 
 export default function Header() {
   const navLinks = [
-    { name: "Data Tool", href: "#" },
-    { name: "Dashboard", href: "#" },
+    { name: "Data Tool", href: "https://sl-phu.coveragetrackr.com/" },
+    { name: "Dashboard", href: "https://sldash.sydani.org/" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -102,7 +102,7 @@ export default function Header() {
     }
   }, [open, shouldRender]);
   return (
-    <div className="bg-transparent  h-20 absolute w-full top-0">
+    <div className="bg-transparent h-20 absolute w-full top-0">
         <div className="lg:w-[85%] lg:px-0 px-5 mx-auto  flex items-center justify-between  h-20">
           <div>
           <img src={logo} alt="" />
@@ -126,7 +126,7 @@ export default function Header() {
 
             <div>
               <Button className="rounded bg-transparent hover:bg-white hover:text-gray-500 border border-white transition-colors">
-                Request Demo
+                Contact Admin
               </Button>
             </div>
           </div>

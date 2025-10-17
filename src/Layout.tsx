@@ -9,7 +9,6 @@ import { Button } from "./components/ui/button";
 
 export default function Layout() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
     { left: frame1, right: frame2 },
     { left: frame3, right: frame4 },
@@ -37,14 +36,14 @@ export default function Layout() {
         />
       </div>
 
-      <div className="lg:grid grid-cols-2 flex flex-col-reverse gap-8 ">
-        <div className="flex flex-col justify-center lg:py-0 pb-5">
+      <div className="lg:grid grid-cols-2 flex flex-col gap-8 mt-20 lg:mt-0">
+        <div className="flex flex-col justify-center lg:py-0 ">
           <div className="lg:flex items-center text-[#AED2EC] gap-4 hidden">
             <hr className="w-24 border-3 rounded border-[#AED2EC]" />
             <span>SIERRA LEONE</span>
           </div>
 
-          <p className="lg:text-6xl md:text-2xl text-xl font-semibold py-6">
+          <p className="lg:text-6xl text-3xl font-semibold py-6">
             2025 Microplanning Exercise Platform
           </p>
 
@@ -57,7 +56,7 @@ export default function Layout() {
 
           <div className="mt-3">
             <Button className="rounded bg-transparent hover:bg-white hover:text-gray-500 border border-white transition-colors">
-              Request Demo
+               Contact Admin
             </Button>
           </div>
         </div>
@@ -78,12 +77,12 @@ export default function Layout() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#F5F5F5]/30 px-4 py-6">
+                <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#F5F5F5]/30 px-4 py-6" onClick={() => window.open("https://sl-phu.coveragetrackr.com/", "_blank")}>
                   <p className="lg:text-lg">Data Collection</p>
                   <div className="flex justify-between relative mt-1">
                     <p className="text-xs w-[80%]">
                       Gather accurate field data effortlessly through structured
-                      digital forms and real-time synchronization.
+                      digital forms and real-time synchronization.  
                     </p>
                     <div className="h-8 w-8 border border-white bg-transparent flex justify-center items-center rounded self-end">
                       <ArrowRight size={18} />
@@ -109,7 +108,7 @@ export default function Layout() {
                 }}
               >
                 <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#F5F5F5]/30 px-4 py-6">
+                <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#F5F5F5]/30 px-4 py-6 z-50 hover:cursor-pointer" onClick={() => window.open("https://sldash.sydani.org/", "_blank")}>
                   <p className="lg:text-lg">Visualization Dashboard</p>
                   <div className="flex justify-between relative mt-1">
                     <p className="text-xs w-[80%]">
@@ -126,7 +125,7 @@ export default function Layout() {
           </div>
         </div>
 
-        <div className="lg:hidden block mt-20 md:w-[80%]">
+        <div className="lg:hidden block md:w-[80%] pb-5">
           <div className="relative min-h-[380px] overflow-hidden">
             {/* First slide - Visualization with frame3 */}
             <div
@@ -140,7 +139,7 @@ export default function Layout() {
               }}
             >
               <div className="absolute inset-0 bg-black/40"></div>
-              <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#333333]/30 px-4 py-6">
+              <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#333333]/30 px-4 py-6 z-50" onClick={() => window.open("https://sldash.sydani.org/", "_blank")}>
                 <p className="text-lg">Visualization Dashboard</p>
                 <div className="flex justify-between relative mt-1">
                   <p className="text-xs w-[80%]">
@@ -166,7 +165,7 @@ export default function Layout() {
               }}
             >
               <div className="absolute inset-0 bg-black/40"></div>
-              <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#F5F5F5]/30 px-4 py-6">
+              <div className="absolute bottom-0 left-0 right-0 min-h-28 bg-gradient-to-t from-[#333333]/40 to-[#F5F5F5]/30 px-4 py-6 z-50"  onClick={() => window.open("https://sl-phu.coveragetrackr.com/", "_blank")}>
                 <p className="text-lg">Data Collection</p>
                 <div className="flex justify-between relative mt-1">
                   <p className="text-xs w-[80%]">
