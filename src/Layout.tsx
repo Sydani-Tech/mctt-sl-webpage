@@ -56,7 +56,7 @@ export default function Layout() {
 
           <div className="mt-3">
             <Button className="rounded bg-transparent hover:bg-white hover:text-gray-500 border border-white transition-colors">
-               Contact Admin
+               Login
             </Button>
           </div>
         </div>
