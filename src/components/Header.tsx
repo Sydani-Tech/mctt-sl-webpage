@@ -1,13 +1,12 @@
 import { Menu, X } from "lucide-react";
-import logo from "../assets/s-logo.svg"
 import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 import gsap from 'gsap';
 
 export default function Header() {
   const navLinks = [
-    { name: "Data Tool", href: "https://sl-phu.coveragetrackr.com/" },
-    { name: "Dashboard", href: "https://sldash.sydani.org/" },
+    { name: "Data Tool", href: "https://sl-phu.coveragetrackr.com/", comingSoon: true },
+    { name: "Dashboard", href: "https://sldash.sydani.org/", comingSoon: true },
   ];
 
   const [open, setOpen] = useState(false);
@@ -105,28 +104,38 @@ export default function Header() {
     <div className="bg-transparent h-20 absolute w-full top-0">
         <div className="lg:w-[85%] lg:px-0 px-5 mx-auto  flex items-center justify-between  h-20">
           <div>
-          <img src={logo} alt="" />
+          <img src="https://coveragetrackr.com/assets/mctt_logo-BZr5cGoS.svg" alt="MCTT Logo" />
         </div>
 
         <div className="lg:flex justify-between items-center gap-10 hidden">
             <div>
               <nav className="flex space-x-6">
                 {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    // onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="text-white transition-colors cursor-pointer"
-                  >
-                    {link.name}
-                  </a>
+                  <div key={link.name} className="relative inline-block">
+                    {link.comingSoon ? (
+                      <span className="text-white/60 cursor-not-allowed transition-colors relative">
+                        {link.name}
+                        <span className="ml-2 bg-yellow-400 text-black text-xs px-2 py-1 rounded-full font-semibold">
+                          Coming Soon
+                        </span>
+                      </span>
+                    ) : (
+                      <a
+                        href={link.href}
+                        // onClick={(e) => handleSmoothScroll(e, link.href)}
+                        className="text-white transition-colors cursor-pointer"
+                      >
+                        {link.name}
+                      </a>
+                    )}
+                  </div>
                 ))}
               </nav>
             </div>
 
             <div>
               <Button className="rounded bg-transparent hover:bg-white hover:text-gray-500 border border-white transition-colors">
-                Contact Admin
+                Login
               </Button>
             </div>
           </div>
@@ -152,14 +161,24 @@ export default function Header() {
         >
           <div className="flex flex-col space-x-8 space-y-4">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="transition-colors opacity-0 cursor-pointer"
-              >
-                {link.name}
-              </a>
+              <div key={link.name} className="opacity-0">
+                {link.comingSoon ? (
+                  <div className="text-white/60 cursor-not-allowed transition-colors flex items-center justify-between">
+                    <span>{link.name}</span>
+                    <span className="bg-yellow-500 text-black text-xs px-2 py-1 rounded-full font-semibold">
+                      Coming Soon
+                    </span>
+                  </div>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="transition-colors cursor-pointer"
+                  >
+                    {link.name}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
         </div>
