@@ -1,38 +1,38 @@
-import { Menu, X } from "lucide-react";
+// import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useRef, useState } from "react";
 import gsap from 'gsap';
 
 export default function Header() {
-  const navLinks = [
-    { name: "Data Tool", href: "https://sl-phu.coveragetrackr.com/", comingSoon: true },
-    { name: "Dashboard", href: "https://sldash.sydani.org/", comingSoon: true },
-  ];
+  // const navLinks = [
+  //   { name: "Data Tool", href: "https://sl-phu.coveragetrackr.com/", comingSoon: true },
+  //   { name: "Dashboard", href: "https://sldash.sydani.org/", comingSoon: true },
+  // ];
 
-  const [open, setOpen] = useState(false);
+  const [open, _setOpen] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  // const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  //   e.preventDefault();
     
-    if (href === "#") return;
+  //   if (href === "#") return;
     
-    const targetId = href.replace("#", "");
-    const targetElement = document.getElementById(targetId);
+  //   const targetId = href.replace("#", "");
+  //   const targetElement = document.getElementById(targetId);
     
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+  //   if (targetElement) {
+  //     targetElement.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
       
-      // Close mobile menu if open
-      if (open) {
-        setOpen(false);
-      }
-    }
-  };
+  //     // Close mobile menu if open
+  //     if (open) {
+  //       setOpen(false);
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
     if (open) {
@@ -108,7 +108,7 @@ export default function Header() {
         </div>
 
         <div className="lg:flex justify-between items-center gap-10 hidden">
-            <div>
+            {/* <div>
               <nav className="flex space-x-6">
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative inline-block">
@@ -131,7 +131,7 @@ export default function Header() {
                   </div>
                 ))}
               </nav>
-            </div>
+            </div> */}
 
             <div>
               <Button className="rounded bg-transparent hover:bg-white hover:text-gray-500 border border-white transition-colors">
@@ -140,7 +140,7 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="lg:hidden block text-white">
+          {/* <div className="lg:hidden block text-white">
             <Menu
               size={24}
               className={`${open ? "hidden" : "block"}`}
@@ -151,10 +151,10 @@ export default function Header() {
               className={`${!open ? "hidden" : "block"} float-end`}
               onClick={() => setOpen(!open)}
             />
-          </div>
+          </div> */}
         </div>
 
-        {shouldRender && (
+        {/* {shouldRender && (
         <div
           ref={menuRef}
           className="bg-black/40  top-20 z-50 rounded-b-lg text-white absolute w-[100%] shadow p-6  lg:hidden block opacity-0"
@@ -182,7 +182,7 @@ export default function Header() {
             ))}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   )
 }
